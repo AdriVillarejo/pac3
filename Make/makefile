@@ -7,15 +7,15 @@ calcula: calcula.c calc.o
 calc.o: calc.c calc.h
 		$(Adrian) $(PRACTICA) -c calc.c -o calc.o
 
-.PHONY: limpia
-limpia: 
+.PHONY: clean
+clean: 
 		rm -rf calc.o
 		rm -f calcula
 
 .PHONY: dist
 dist: clean calcula
 		rm -rf ../dist;
-		mkdir -p ../dit/usr/bin/calc
+		mkdir -p ../dist/usr/bin/calc
 		cp calcula ../dist/usr/bin/calc
 		
 .PHONY: targz
